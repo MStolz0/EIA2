@@ -1,0 +1,9 @@
+1. Konstanten "subjekte", "praedikate" und "objekte" definieren
+2. Funktion "waehleZufaelligesElement" definieren
+3. Funktion "erstelleGedicht" definieren
+4. Funktion "console.log" aufrufen und "erstelleGedicht" ausführen
+5. "waehleZufaelligesElement(subjekte)" aufrufen, ein zufälliges Subjekt wählen und zurückgeben ("Luna")
+6. "waehleZufaelligesElement(praedikate)" aufrufen, ein zufälliges Prädikat wählen und zurückgeben ("denkt")
+7. "waehleZufaelligesElement(objekte)" aufrufen, ein zufälliges Objekt wählen und zurückgeben ("Hexenbesen")
+8. Die Zeile "Luna denkt Hexenbesen." erstellen
+9. "waehleZufaelligesElement(subjekte)" aufrufen
