@@ -1,0 +1,52 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-style: groove;
+    border-color: rgba(0, 0, 0, 0.947);
+    background-color: rgba(202, 175, 202, 0.772);
+    border-radius: 0px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+}
+
+
+body {
+    background: linear-gradient(to right, #dae2f8, #d6a4a4);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+#createTask {
+    text-align: center;
+    margin: 15px;
+    background-color: rgba(202, 175, 202, 0.772);
+    border-radius:15px ;
+    border-color: rgba(0, 0, 0, 0.712);
+    border-width: 3px;
+}
+
+.onGoingTask{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    justify-content: space-between;
+    position:static;
+    border-radius: 10px;
+    background-color: rgba(202, 175, 202, 0.772);
+    border-color: rgba(0, 0, 0, 0.712);
+    
+}
+
+
+.done {
+    text-align: center;
+    margin-top: 350px;
+    border-radius: 10px;
+    border-color: black;
+    border-style: dotted;
+}
+
+.doneTask {
+    border-style: hidden;
+}

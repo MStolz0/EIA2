@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Aufgabe: Aufgaben Planer
+    Name: Manuel Dennis Stolz
+    Matrikelnummer: 271135
+    Links: W3C-Schools.de (Clients); W3C-Schools set date, color gradients; 
+    Datum: 15..04.2023
+    Autorenschaft: TS-Code von Judith Pauler Analysiert, Implementiert und auf meine Bedürfnisse angepasst.
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./functions.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="headline">
+    <h1>Aufgaben Planer</h1>
+ </div>
+
+
+    <br>
+
+<div id="wrapper">
+        <form id="form1">
+                <fieldset id="createTask">
+        
+                    <select name="name" id="names">
+                        <option value="NoPersonSelected">...</option>
+                        <option id="one" value="Paul">Paul</option>
+                        <option value="Lena">Lena</option>
+                        <option value="Julian">Julian</option>
+                    </select>
+
+                    <label>Aufgabe:</label>
+                    <input id="task" type="text" name="task" placeholder="Aufgabe"
+                    required>
+
+                    <label>Bis Wann:</label>
+                    <input class="date" type="text" name="deadline">
+
+                    <label>Kommentar:</label>
+                    <input id="inputComment" type="textarea" name="comment" placeholder="Kommentar" required>
+                    <button class="addTask">+</button>
+                </fieldset>
+        </form> 
+</div>
+
+
+    <div class="currentTasks">
+        <fieldset class="onGoingTask">
+            <input type="checkbox" name="done" class="checkbox">
+            <select name="currentPerson" class="currentPerson">
+                <option value="option">Paul</option>
+            </select>
+            <span>Abwasch machen</span>
+            <input class="date" type="date" type="submit
+            " name="deadline"> 
+            <input class="comment" type="text" >
+            <button class="deleteTask">-</button>
+            <button class="editTask">Edit</button>
+        </fieldset>
+    
+    </div>
+
+    <div class="done">
+        <h2>done tasks</h2>
+        <fieldset class="doneTask">
+            <input type="checkbox" name="done" class="checkbox">
+            <select name="currentPerson" class="currentPerson">
+                <option value="option">Paul</option>
+            </select>
+            <span>Abwasch machen</span>
+            <input class="date" type="date" type="submit
+            " name="deadline"> 
+            <input class="comment" type="text" >
+            <button class="deleteTask">-</button>
+            <button class="editTask">Edit</button>
+        </fieldset>
+    </div>
+    
+</body>
+</html>
