@@ -1,0 +1,12 @@
+{
+    "TaskData": [
+        {"taskname": "Einkaufen",
+        "date": "12.05.2023" ,
+        "comment": "Kein Schweinefleisch." ,
+        "person": "Lena" ,
+        "box": "true" }
+    ]
+
+
+
+}
