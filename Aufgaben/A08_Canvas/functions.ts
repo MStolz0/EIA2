@@ -1,14 +1,13 @@
 namespace Canvas {
 
-    const canvas: HTMLCanvasElement = document.querySelector("canvas")!;
-    const ctx: CanvasRenderingContext2D = canvas.getContext("2d")!;
+    
 
-    ctx.lineWidth = 4;
+    
 
     type point = [number, number];
     type square = [point, point, point, point];
 
-    function drawSquare (square: square): void {
+    function drawSquare (square: square, ctx: CanvasRenderingContext2D): void {
         const [p1,p2,p3,p4] = square;
         ctx.beginPath();
         ctx.moveTo(...p1);
@@ -39,23 +38,75 @@ namespace Canvas {
         ];
     }
 
-    function test(){
+    function drawSquares(
+        canvas: HTMLCanvasElement,
+         squareNumber: number,
+         delay: number,
+          t:number
+          ): Promise<void>{
+            return new Promise(resolve => {
+
+            
+           
+        const ctx = canvas.getContext("2d");
+        const offset = ctx.lineWidth/2;
         const initialSquare: square = [
-            [10,10],
-            [400,10],
-            [400,400],
-            [10,400],
+            [offset,offset],
+            [canvas.width - offset,offset],
+            [canvas.width - offset,canvas.height - offset],
+            [offset,canvas.height - offset],
         ];
 
-        let square: square = initialSquare;
+        let currentSquare: square = initialSquare;
+        let counter = 0;
 
-        for (let i = 0; i < 47; i++) {
+        recursivleDrawSquares();
+
+        function recursivleDrawSquares(): void {
+            counter++;
+            drawSquare(currentSquare, ctx);
+            if (counter < squareNumber) {
+                currentSquare = getNextSquare(currentSquare, t);
+                setTimeout(recursivleDrawSquares,delay);
+            } else {
+                resolve();
+            }
             
-            drawSquare(square);
-            square = getNextSquare(square, 0.1);
-        }
+        } 
+    });
 
     }
 
-    test();
+   async function drawAllCanvases() {
+            const canvases = getCanvases();
+            setupCanvases(canvases);
+            const [canvas1,canvas2,canvas3,canvas4] = canvases;
+            const t = 0.1;
+            const squareNumber = 55;
+            const delay = 100;
+           await drawSquares(canvas1, squareNumber,delay, 1-t);
+           await drawSquares(canvas2,squareNumber,delay, t);
+           await drawSquares(canvas3,squareNumber,delay, t);
+           await drawSquares(canvas4,squareNumber,delay, 1-t);
+    }
+
+    drawAllCanvases();
+
+    function setupCanvases(canvases: HTMLCanvasElement[]) {
+        const windowSize = Math.min(
+            window.innerWidth,
+             window.innerHeight
+             );
+        const canvasSize = windowSize / 2.2;
+        canvases.forEach((canvas) => {
+            canvas.width = canvas.height = canvasSize;
+            const ctx = canvas.getContext("2d")!;
+            ctx.lineWidth = Math.round(window.innerWidth / 500);
+            ctx.strokeStyle = "#f2c";
+        });
+    }
+
+    function getCanvases(): HTMLCanvasElement[] {
+        return Array.from(document.querySelectorAll("canvas"));
+    }
 }
