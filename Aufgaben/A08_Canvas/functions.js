@@ -60,7 +60,7 @@ var Canvas;
         const [canvas1, canvas2, canvas3, canvas4] = canvases;
         const t = 0.1;
         const squareNumber = 55;
-        const delay = 100;
+        const delay = 50;
         await drawSquares(canvas1, squareNumber, delay, 1 - t);
         await drawSquares(canvas2, squareNumber, delay, t);
         await drawSquares(canvas3, squareNumber, delay, t);
