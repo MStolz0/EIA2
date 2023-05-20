@@ -9,7 +9,7 @@ var Luftfahrt;
         mountains();
         bees();
         Windsocke();
-        ramp();
+        kiosk();
         parachute();
         clouds();
     }
@@ -277,7 +277,7 @@ var Luftfahrt;
         }
     }
     ;
-    function ramp() {
+    function kiosk() {
         crc2.beginPath();
         crc2.rect(0, 500, 500, 200);
         crc2.fillStyle = "lightred";

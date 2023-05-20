@@ -12,7 +12,7 @@ namespace Luftfahrt {
         mountains();
         bees();
         Windsocke();
-        ramp();
+        kiosk();
         parachute();
         clouds();
     
@@ -344,7 +344,7 @@ function clouds(){
 }
 };
 
-function ramp(){
+function kiosk(){
 
     crc2.beginPath();
     crc2.rect(0,500,500,200);
